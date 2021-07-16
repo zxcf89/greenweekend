@@ -281,6 +281,10 @@ https://freebiesbug.com/psd-freebies/minimo-minimal-blog-template/
 > id는 주로 서버에서 불러오는 데이터를 표시하는 위치에 고유하게 사용 => 백엔드 개발에서 주로 사용
 > 
 > class는 주로 css 스타일 적용, javascript 인터렉션 적용할때 사용 => 프론트엔드 개발에서 주로 사용
+>
+> id는 하나의 HTML Element에 대해서 하나의 이름만 존재, HTML 문서내에서 고유해야 함
+>
+> class는 하나의 HTML Element에 대해서 여러개의 이름을 지정할 수 있고, HTML 문서내에서 여러 곳에서 공통 사용 가능함
 
 ### CSS 작성방법
 
@@ -293,11 +297,85 @@ https://freebiesbug.com/psd-freebies/minimo-minimal-blog-template/
 ### naming할 때 표기방식
 
 > id/class naming, 변수/함수 naming, 파일/폴더 naming의 경우 가독성을 높이기 위해 사용
+> 
 > 표기방식을 사용하는 이유 
+> 
 > - naming할 때 두단어 이상으로 구성되는 경우 단어와 단어 사이를 구분하기 위해 사용
+> 
 > - 단어의 시작부분에 첫글자를 대문자로 변경, 특수기호를 사용
+> 
 > 표기방식 종류
+> 
 > snake case : gnb_depth1 => 파일/폴더
+> 
 > kebab case : gnb-depth1 => id/class
+> 
 > camel case : gnbDepth1 => javascript의 변수/함수
+> 
 > Pascal case : GnbDepth1 => javascript의 클래스
+
+### OOCSS(Object Oriented CSS)
+
+> HTML Element를 대상화시키는 과정에서 Element 하나하나를 모두 객체화 시키는 이론
+>
+> HTML Element 모두 각각 id,class attibute를 사용해서 이름을 지정해줌
+
+### web color
+
+> color mode
+>  - 가산혼합(빛의혼합) : RGB 컬러모드
+
+> 표현할 수 있는 색의 개수
+> 1byte = 8bit = 256개(0~255)
+>
+> RGB => 3byte => 24bit 트루컬러 : 16777216가지 색
+
+> 색 표현 코드값
+>
+> 16진수(hex code) : #AABA01
+>
+> 10진수 : (255, 255, 255)
+
+> CSS 사용법
+```
+color:#2abd51;
+color:rgb(42, 189, 81);
+color:rgba(42, 189, 81, 0.5);
+```
+> 투명도를 의미하는 용어
+> - transparent : 투명한
+> - alpha : 추가 채널
+> - opacity : 불투명도
+
+### TEXT CSS
+
+- color
+- text-align : left, center, right, justify
+- text-decoration : underline, line-through, overline, none
+- text-transform : uppercase, lowercase, Capitalize
+- text-indent : 20px / -20px
+- letter-spacing : 2px / -2px
+- line-height: 20px / 1.8(배수)
+- word-spacing
+- white-space : nowrap
+- text-shadow
+
+## Font CSS
+- font-family : "Times New Roman", Times, serif;
+  - 순서대로 대체 폰트를 찾음
+  - sans-serif, serif, monospace, cursive, fantasy 5개의 기본폰트는 font-family 사용시 종류에 맞게 항상 끝에 기본으로 사용됨
+  - 웹사이트에 사용하는 폰트는 웹폰트(서버에 폰트파일을 저장해서 사용)로 사용하는 데, 업로드된 파일을 직접 사용하는 경우, 웹폰트 서비스를 사용하는 경우 2가지가 있음
+  -대표적인 웹폰트 서비스 : 구글 폰트, 눈누
+- font-size
+- font-style : italic
+- font-weight : bold / 500
+  - 폰트 굵기가 다양한 경우 숫자로 굵기를 표현
+
+### Box Model
+
+> 구성요소
+>
+> - width/height : 너비/높이
+> - padding : 안쪽 여백
+> - border : 테두리
+> - margin : 바깥 여백
